@@ -1,24 +1,24 @@
-function extend(Child,Parent){
-    Child.prototype  =Object.create(Parent.prototype);
-    Child.prototype.constructor = Child;
+function extend(Child, Parent) {
+  Child.prototype = Object.create(Parent.prototype);
+  Child.prototype.constructor = Child;
 }
-function Shape(color){
-   this.color = color;
+function Shape(color) {
+  this.color = color;
 }
-Shape.prototype.duplicate=function(){
-    console.log('duplicate');
+Shape.prototype.duplicate = function () {
+  console.log("duplicate");
+};
+
+function Circle(radius, color) {
+  Shape.call(this, color);
+  this.radius = radius;
 }
 
-function Circle(radius,color){
-   Shape.call(this,color)
-   this.radius = radius
-}
+extend(Circle, Shape);
 
-extend(Circle,Shape)
-
-Circle.prototype.duplicate=function(){
-    Shape.prototype.duplicate.call(this);
-    console.log('circle duplicate');
-}
+Circle.prototype.duplicate = function () {
+  Shape.prototype.duplicate.call(this);
+  console.log("circle duplicate");
+};
 const s = new Shape();
-const c = new Circle(1,'red')
+const c = new Circle(1, "red");

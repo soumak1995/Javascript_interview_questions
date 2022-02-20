@@ -1,22 +1,13 @@
+const obj = {
+  name: "ABC",
+  show: function () {
+    return this.name;
+  },
+};
 
-function mixin(target,...sources){
-    Object.assign(target,...sources)
-}
-const canEat = {
-    eat :function(){
-        this.hunger--;
-        console.log('eating ..')
-    }
-}
+const obj_1 = {
+  name: "pqrs",
+};
 
-const canWalk = {
-    walk :function(){
-        console.log('Walking ..')
-    }
-}
-function person(){
-
-}
-mixin(Person.prototype,canEat,canWalk)
-const person =new Person();
-console.log(person)
+const showfun = obj.show;
+console.log(showfun.bind(obj_1)());
