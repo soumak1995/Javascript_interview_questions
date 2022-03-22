@@ -3,7 +3,7 @@ function keepCloning(objectpassed) {
     return objectpassed;
   }
   // give temporary-storage the original obj's constructor
-  var temporarystorage = objectpassed.constructor();
+  var temporarystorage = {};
   for (var key in objectpassed) {
     temporarystorage[key] = keepCloning(objectpassed[key]);
   }

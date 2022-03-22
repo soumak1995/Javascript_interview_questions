@@ -64,7 +64,7 @@ Function.prototype.mybind = function (...args) {
   let params = args.slice(1);
   context = this;
   return function (...args2) {
-    context.apply(args[0], [...params, ...args2]);
+    return context.apply(args[0], [...params, ...args2]);
   };
 };
 

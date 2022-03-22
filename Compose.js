@@ -3,11 +3,11 @@ function addByFour(a) {
 }
 
 function mulByFour(a) {
-  return a + 4;
+  return a * 4;
 }
 
 function subByFour(a) {
-  return a + 4;
+  return a - 4;
 }
 
 const compose = function (...functions) {
@@ -15,3 +15,4 @@ const compose = function (...functions) {
     return functions.reduceRight((arg, fn) => fn(arg), args);
   };
 };
+console.log(compose(addByFour, mulByFour, subByFour)(4));

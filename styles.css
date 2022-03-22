@@ -14,11 +14,11 @@
     padding: 30px;
     border: 1px solid black;
 
-} */
-.box {
-  display: block;
-  margin-top: 5em;
-  margin-bottom: 5em;
-  margin-left: 60px;
-  margin-right: 60px;
+/* } */
+
+.class div {
+  color: red;
+}
+div.class {
+  color: green;
 }
