@@ -10,7 +10,7 @@ function myFlat(array, depth = 1) {
   array.forEach((arr) => {
     if (Array.isArray(arr) && depth > 0) {
       result.push(...myFlat(arr, depth - 1));
-    } else return result.push(arr);
+    } else result.push(arr);
   });
   return result;
 }

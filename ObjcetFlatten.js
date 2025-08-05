@@ -18,12 +18,12 @@ function keyFlatten(prevKey, obj) {
 
   for (let key in obj) {
     if (typeof obj[key] === "object") {
-      let temp;
-      if (!prevKey) {
-        temp = key;
-      } else {
-        temp = prevKey + "." + key;
-      }
+           let temp;
+        if (!prevKey) {
+          temp = key;
+        } else {
+          temp = prevKey + "." + key;
+        }
       const obj2 = keyFlatten(temp, { ...obj[key] });
       newObj = { ...newObj, ...obj2 };
     } else newObj[prevKey + "." + key] = obj[key];
